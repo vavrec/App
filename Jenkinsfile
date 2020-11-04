@@ -4,7 +4,7 @@ pipeline{
     stages{
         stage('Build'){
             steps{
-              echo 'Build'
+              echo "Build of branch: ${env.BRANCH_NAME} "
               bat 'mvn -DSkipTests package'
             }
         }
