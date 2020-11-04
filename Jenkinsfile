@@ -17,6 +17,7 @@ pipeline{
         stage('Deploy'){
             steps{
                 echo 'Deploy'
+                bat 'docker cp app-0.0.1-SNAPSHOT.war mytomcat:/usr/local/tomcat/webapps'
             }
         }
     }
