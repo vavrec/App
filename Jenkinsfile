@@ -12,7 +12,6 @@ pipeline{
             steps{
               echo 'Test'
               bat 'mvn test'
-
             }
         }
         stage('Deploy'){
@@ -23,7 +22,7 @@ pipeline{
     }
      post {
             always {
-                archiveArtifacts artifacts: 'generatedFile.txt', onlyIfSuccessful: true
+                archiveArtifacts artifacts: 'target\\*.war', onlyIfSuccessful: true
             }
         }
 }
