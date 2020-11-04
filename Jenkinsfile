@@ -21,4 +21,9 @@ pipeline{
             }
         }
     }
+     post {
+            always {
+                archiveArtifacts artifacts: 'generatedFile.txt', onlyIfSuccessful: true
+            }
+        }
 }
